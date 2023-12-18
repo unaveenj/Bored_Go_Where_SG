@@ -1,6 +1,6 @@
 # Bored Go Where Singapore
 
-![Banner Image]([URL_to_bg4.png](https://i.ibb.co/y49126P/bg3.png) <!-- Replace URL_to_bg4.png with the actual URL of the image -->
+![Banner Image](https://i.ibb.co/y49126P/bg3.png) <!-- Replace URL_to_bg4.png with the actual URL of the image -->
 
 ## Project Overview
 
