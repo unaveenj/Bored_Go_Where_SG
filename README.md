@@ -1,6 +1,6 @@
 # Bored Go Where Singapore
 
-![Banner Image]([URL_to_bg4.png](https://github.com/unaveenj/Bored_Go_Where_SG/blob/master/bg4.png)) <!-- Replace URL_to_bg4.png with the actual URL of the image -->
+![Banner Image]([URL_to_bg4.png]([https://github.com/unaveenj/Bored_Go_Where_SG/blob/master/bg4.png](https://github.com/unaveenj/Bored_Go_Where_SG/blob/master/bg4.png?raw=true))) <!-- Replace URL_to_bg4.png with the actual URL of the image -->
 
 ## Project Overview
 
