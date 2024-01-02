@@ -13,8 +13,8 @@ This project involves creating a Streamlit web application that integrates a Map
 ## Checklist of Tasks
 
 - [x] **Skeleton with Mapbox**: Set up the basic Streamlit app framework and integrate the Mapbox API for map functionality.
-- [ ] **Incorporate OpenAI API**: Implement the OpenAI API to leverage AI capabilities in the app.
-- [ ] **Create an Agent**: Develop a chatbot agent that can interact with users, using the OpenAI API for processing and responding to queries.
+- [x] **Incorporate OpenAI API**: Implement the OpenAI API to leverage AI capabilities in the app.
+- [x] **Create an Agent**: Develop a chatbot agent that can interact with users, using the OpenAI API for processing and responding to queries.
 - [ ] **Link Everything Up**: Ensure all components of the app (Mapbox, OpenAI API, chatbot) are seamlessly integrated and functioning together.
 - [ ] **Rearrange the Layout**: Fine-tune the app's layout for optimal user experience and aesthetics.
 
