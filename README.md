@@ -6,6 +6,10 @@
 
 This project involves creating a Streamlit web application that integrates a Mapbox map, incorporates the OpenAI API, and features a chatbot agent. The objective is to create an interactive and user-friendly app where users can interact with the chatbot and view locations on a map.
 
+<a href="https://ibb.co/5Rx2K9d"><img src="https://i.ibb.co/tJP3LhS/1eaea699-315d-4d1f-9373-8567b6e935de.jpg" alt="1eaea699-315d-4d1f-9373-8567b6e935de" border="0"></a>
+
+
+
 ## Checklist of Tasks
 
 - [x] **Skeleton with Mapbox**: Set up the basic Streamlit app framework and integrate the Mapbox API for map functionality.
