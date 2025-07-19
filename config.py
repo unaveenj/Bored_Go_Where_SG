@@ -10,34 +10,46 @@ class Config:
     @staticmethod
     def get_openai_key():
         """Get OpenAI API key from environment or Streamlit secrets"""
-        return (
-            os.getenv("OPENAI_API_KEY") or 
-            st.secrets.get("OPENAI_API_KEY", "")
-        )
+        try:
+            return (
+                os.getenv("OPENAI_API_KEY") or 
+                st.secrets.get("OPENAI_API_KEY", "")
+            )
+        except:
+            return os.getenv("OPENAI_API_KEY", "")
     
     @staticmethod
     def get_mapbox_token():
         """Get Mapbox access token from environment or Streamlit secrets"""
-        return (
-            os.getenv("MAPBOX_ACCESS_TOKEN") or 
-            st.secrets.get("MAPBOX_ACCESS_TOKEN", "")
-        )
+        try:
+            return (
+                os.getenv("MAPBOX_ACCESS_TOKEN") or 
+                st.secrets.get("MAPBOX_ACCESS_TOKEN", "")
+            )
+        except:
+            return os.getenv("MAPBOX_ACCESS_TOKEN", "")
     
     @staticmethod
     def get_google_places_key():
         """Get Google Places API key from environment or Streamlit secrets"""
-        return (
-            os.getenv("GOOGLE_PLACES_API_KEY") or 
-            st.secrets.get("GOOGLE_PLACES_API_KEY", "")
-        )
+        try:
+            return (
+                os.getenv("GOOGLE_PLACES_API_KEY") or 
+                st.secrets.get("GOOGLE_PLACES_API_KEY", "")
+            )
+        except:
+            return os.getenv("GOOGLE_PLACES_API_KEY", "")
     
     @staticmethod
     def get_openweather_key():
         """Get OpenWeather API key from environment or Streamlit secrets"""
-        return (
-            os.getenv("OPENWEATHER_API_KEY") or 
-            st.secrets.get("OPENWEATHER_API_KEY", "")
-        )
+        try:
+            return (
+                os.getenv("OPENWEATHER_API_KEY") or 
+                st.secrets.get("OPENWEATHER_API_KEY", "")
+            )
+        except:
+            return os.getenv("OPENWEATHER_API_KEY", "")
     
     @staticmethod
     def validate_keys():

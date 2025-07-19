@@ -3,7 +3,9 @@
     "allow": [
       "Bash(python:*)",
       "Bash(venvScripts:*)",
-      "Bash(.venvScriptsactivate)"
+      "Bash(.venvScriptsactivate)",
+      "Bash(git commit:*)",
+      "Bash(pip install:*)"
     ],
     "deny": []
   }

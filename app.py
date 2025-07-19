@@ -224,12 +224,11 @@ class BoredGoWhereApp:
     
     def run(self):
         """Main application logic"""
-        # Check API keys
+        # Check API keys - show warning but don't stop app
         missing_keys = Config.validate_keys()
         if missing_keys:
-            st.error(f"Missing API keys: {', '.join(missing_keys)}")
-            st.info("Please set up your API keys in .env file or Streamlit secrets")
-            st.stop()
+            st.warning(f"Running in demo mode. Missing API keys: {', '.join(missing_keys)}")
+            st.info("💡 Add API keys to .env file for full functionality. App works with fallback data!")
         
         # Header
         st.markdown('<h1 class="main-header">🗺️ Bored Go Where SG</h1>', unsafe_allow_html=True)
