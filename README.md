@@ -1,48 +1,144 @@
-# Bored Go Where Singapore
+# 🗺️ Bored Go Where Singapore
 
-![Banner Image](https://i.ibb.co/y49126P/bg3.png) <!-- Replace URL_to_bg4.png with the actual URL of the image -->
+![Banner](https://i.ibb.co/y49126P/bg3.png)
 
-## Project Overview
+## 🎯 Project Overview
 
-This project involves creating a Streamlit web application that integrates a Mapbox map, incorporates the OpenAI API, and features a chatbot agent. The objective is to create an interactive and user-friendly app where users can interact with the chatbot and view locations on a map.
+**Bored Go Where SG** is an AI-powered interactive web application that helps users discover exciting places and activities in Singapore when boredom strikes. Using a conversational chat interface, the app suggests personalized recommendations based on mood, budget, weather, and preferences.
 
-<a href="https://ibb.co/5Rx2K9d"><img src="https://i.ibb.co/tJP3LhS/1eaea699-315d-4d1f-9373-8567b6e935de.jpg" alt="1eaea699-315d-4d1f-9373-8567b6e935de" border="0"></a>
+## ✨ Key Features
 
+- 💬 **Conversational Chat Interface** - Natural language input for queries like "I'm bored" or "Weekend ideas?"
+- 🗺️ **Interactive Map Visualization** - Live map with numbered markers for suggested places
+- 🌤️ **Weather Integration** - Real-time weather data to avoid outdoor spots during rain
+- 🎭 **Mood-Based Filtering** - Suggestions based on mood (chill, active, romantic, cultural, random)
+- 💰 **Budget Awareness** - Filter by price range (free, cheap, moderate, splurge)
+- 📍 **Location Intelligence** - Smart suggestions based on proximity and travel time
+- ☕ **Support Integration** - "Buy Me a Coffee" button for project support
 
+## 🚀 Quick Start
 
-## Checklist of Tasks
+### Prerequisites
+- Python 3.8+
+- API Keys for:
+  - OpenAI (for AI responses)
+  - Google Places (for place data)
+  - OpenWeather (for weather data)
 
-- [x] **Skeleton with Mapbox**: Set up the basic Streamlit app framework and integrate the Mapbox API for map functionality.
-- [x] **Incorporate OpenAI API**: Implement the OpenAI API to leverage AI capabilities in the app.
-- [x] **Create an Agent**: Develop a chatbot agent that can interact with users, using the OpenAI API for processing and responding to queries.
-- [ ] **Link Everything Up**: Ensure all components of the app (Mapbox, OpenAI API, chatbot) are seamlessly integrated and functioning together.
-- [ ] **Rearrange the Layout**: Fine-tune the app's layout for optimal user experience and aesthetics.
+### Installation
 
-## Development Instructions
+1. **Clone and setup**:
+   ```bash
+   git clone <repository-url>
+   cd Bored_Go_Where_SG
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
-1. **Skeleton with Mapbox**:
-   - Ensure Mapbox API is correctly integrated.
-   - Display the map with desired default settings (e.g., focus on a specific region).
+2. **Configure API Keys**:
+   ```bash
+   cp .env.example .env
+   # Edit .env file with your actual API keys
+   ```
 
-2. **Incorporate OpenAI API**:
-   - Set up the OpenAI API key and ensure secure storage.
-   - Implement API calls to OpenAI within the app for processing user input.
+3. **Run the application**:
+   ```bash
+   streamlit run app.py
+   ```
 
-3. **Create an Agent**:
-   - Design and develop the chatbot's conversational logic.
-   - Integrate the chatbot with the OpenAI API for advanced language processing.
+## 🔧 Configuration
 
-4. **Link Everything Up**:
-   - Connect the chatbot responses to relevant actions on the map (if applicable).
-   - Ensure data flow between the chatbot and the map is smooth and logical.
+### API Keys Setup
 
-5. **Rearrange the Layout**:
-   - Organize the UI elements for ease of use.
-   - Test the app on different screen sizes and adjust the layout responsively.
+Create a `.env` file with your API keys:
 
-## Additional Notes
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
+GOOGLE_PLACES_API_KEY=your_google_places_key_here
+OPENWEATHER_API_KEY=your_openweather_key_here
+```
 
-- Keep the app's dependencies updated.
-- Regularly test the app for bugs and performance issues.
-- Consider user feedback for future improvements.
+### Getting API Keys
 
+1. **OpenAI**: Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+2. **Google Places**: Visit [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
+3. **OpenWeather**: Visit [OpenWeatherMap](https://openweathermap.org/api)
+
+## 📁 Project Structure
+
+```
+Bored_Go_Where_SG/
+├── app.py                 # Main Streamlit application
+├── place_engine.py        # Place suggestion logic and API integration
+├── config.py             # Configuration and API key management
+├── requirements.txt      # Python dependencies
+├── .env.example         # Environment variables template
+├── .gitignore           # Git ignore rules
+├── README.md            # Project documentation
+└── assets/              # Image assets and mockups
+```
+
+## 🎮 How to Use
+
+1. **Start the app** and open in your browser
+2. **Type your query** in the chat input:
+   - "I'm bored"
+   - "Looking for romantic date ideas"
+   - "Free activities near Marina Bay"
+   - "Rainy day indoor activities"
+3. **Adjust filters** in the sidebar:
+   - Select your mood
+   - Set budget preference
+   - Choose search radius
+4. **Explore suggestions** on the map and in the chat
+5. **Get details** about each place including weather conditions
+
+## 🛠️ Technical Stack
+
+- **Frontend**: Streamlit with custom CSS
+- **Maps**: Folium for interactive mapping
+- **AI**: OpenAI GPT for conversational responses
+- **APIs**: Google Places, OpenWeather
+- **Deployment**: Streamlit Cloud ready
+
+## 🎯 Roadmap
+
+- [x] Core chat interface
+- [x] Place suggestion engine
+- [x] Map visualization
+- [x] Weather integration
+- [x] Filter system
+- [x] Buy Me a Coffee integration
+- [ ] Route optimization for multiple stops
+- [ ] User session memory
+- [ ] Advanced NLP for better intent recognition
+- [ ] Offline fallback data
+- [ ] Mobile responsiveness improvements
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## ☕ Support
+
+If you find this project helpful, consider supporting it:
+
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/yourusername)
+
+## 📞 Contact
+
+Created with ❤️ to solve the eternal question: "Bored... go where?"
+
+---
+
+**Note**: This project uses free-tier APIs. For production use, consider upgrading to paid tiers for better rate limits and features.
