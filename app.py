@@ -5,9 +5,11 @@ import plotly.graph_objects as go
 from typing import List, Dict
 import re
 from openai import OpenAI
+from streamlit_option_menu import option_menu
 
 from config import Config, SINGAPORE_CENTER, BUY_ME_COFFEE_URL
 from place_engine import PlaceSuggestionEngine
+from api_validator import APIValidator
 
 # Page configuration
 st.set_page_config(
@@ -54,8 +56,9 @@ class BoredGoWhereApp:
         self.openai_client = self._init_openai()
         
     def _init_openai(self):
-        """Initialize OpenAI client"""
-        api_key = Config.get_openai_key()
+        """Initialize OpenAI client from session state or config"""
+        # Try session state first (from API setup page)
+        api_key = st.session_state.get('api_openai') or Config.get_openai_key()
         if api_key:
             return OpenAI(api_key=api_key)
         return None
@@ -224,15 +227,32 @@ class BoredGoWhereApp:
     
     def run(self):
         """Main application logic"""
-        # Check API keys - show warning but don't stop app
-        missing_keys = Config.validate_keys()
-        if missing_keys:
-            st.warning(f"Running in demo mode. Missing API keys: {', '.join(missing_keys)}")
-            st.info("💡 Add API keys to .env file for full functionality. App works with fallback data!")
+        # Check if API setup is complete
+        if not st.session_state.get('api_setup_complete', False):
+            st.error("🔧 API Setup Required")
+            st.markdown("""
+            Please complete the API setup before using the main application.
+            
+            You need to configure:
+            - OpenAI API (for intelligent responses)
+            - Google Places API (for real place data)  
+            - OpenWeather API (for weather information)
+            """)
+            
+            if st.button("🚀 Go to API Setup", type="primary"):
+                st.switch_page("pages/1_🔧_API_Setup.py")
+            return
         
         # Header
         st.markdown('<h1 class="main-header">🗺️ Bored Go Where SG</h1>', unsafe_allow_html=True)
         st.markdown('<p class="subtitle">Your AI companion for discovering Singapore when boredom strikes!</p>', unsafe_allow_html=True)
+        
+        # Show API status indicator
+        with st.sidebar:
+            st.success("✅ APIs Connected")
+            if st.button("🔧 Reconfigure APIs"):
+                st.session_state['api_setup_complete'] = False
+                st.switch_page("pages/1_🔧_API_Setup.py")
         
         # Initialize session state
         if 'conversation' not in st.session_state:

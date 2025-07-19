@@ -5,7 +5,9 @@
       "Bash(venvScripts:*)",
       "Bash(.venvScriptsactivate)",
       "Bash(git commit:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(taskkill:*)",
+      "Bash(wmic process where:*)"
     ],
     "deny": []
   }

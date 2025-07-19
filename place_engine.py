@@ -1,5 +1,6 @@
 import requests
 import json
+import streamlit as st
 from typing import List, Dict, Optional
 from config import Config, SINGAPORE_CENTER
 
@@ -7,8 +8,9 @@ class PlaceSuggestionEngine:
     """Engine for suggesting places based on user preferences"""
     
     def __init__(self):
-        self.google_api_key = Config.get_google_places_key()
-        self.openweather_key = Config.get_openweather_key()
+        # Try session state first (from API setup page), then fallback to config
+        self.google_api_key = st.session_state.get('api_google_places') or Config.get_google_places_key()
+        self.openweather_key = st.session_state.get('api_openweather') or Config.get_openweather_key()
         
     def search_places(self, query: str, location: Dict = None, radius: int = 5000, 
                      place_type: str = None, price_level: List[int] = None) -> List[Dict]:
